@@ -1,14 +1,8 @@
-import sys
-
-
-def luy_thua(a: float | int, n: int) -> float | int:
-    return a**n
-
-
-if __name__ == "__main__":
-    tokens = sys.stdin.read().split()
-    if len(tokens) >= 2:
-        raw_a = tokens[0]
-        a = float(raw_a) if "." in raw_a else int(raw_a)
-        n = int(tokens[1])
-        print(f"{a} lũy thừa {n} = {luy_thua(a, n)}")
+tokens = input().split()
+if len(tokens) >= 2:
+    a, n = int(tokens[0]), int(tokens[1])
+else:
+    a = int(tokens[0])
+    n = int(input().strip())
+res = a ** n
+print(f"{a} lũy thừa {n} = {res}")

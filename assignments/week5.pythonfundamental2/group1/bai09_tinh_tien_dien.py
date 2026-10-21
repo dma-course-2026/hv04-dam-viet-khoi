@@ -1,21 +1,15 @@
 import sys
 
-
-def tinh_tien_dien(cu: int, moi: int) -> float:
-    kwh = max(0, moi - cu)
+lines = sys.stdin.read().split()
+if len(lines) >= 2:
+    cu, moi = int(lines[-2]), int(lines[-1])
+    kwh = moi - cu
+    if kwh < 0:
+        kwh = 0
     if kwh <= 60:
-        tien = kwh * 5
+        tien = kwh * 5.0
     elif kwh <= 160:
-        tien = 60 * 5 + (kwh - 60) * 8
+        tien = 60 * 5.0 + (kwh - 60) * 8.0
     else:
-        tien = 60 * 5 + 100 * 8 + (kwh - 160) * 10
-    return float(tien)
-
-
-if __name__ == "__main__":
-    tokens = sys.stdin.read().split()
-    if len(tokens) >= 2:
-        cu = int(tokens[-2])
-        moi = int(tokens[-1])
-        tien = tinh_tien_dien(cu, moi)
-        print(f"Số tiền phải trả là: {tien:.2f}")
+        tien = 60 * 5.0 + 100 * 8.0 + (kwh - 160) * 10.0
+    print(f"Số tiền phải trả là: {tien:.2f}")

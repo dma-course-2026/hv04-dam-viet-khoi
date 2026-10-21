@@ -2,9 +2,9 @@
 
 ## Overview
 
-This directory contains solutions for 40 Python exercises divided into three groups:
+This directory contains solutions for 40 Python exercises divided into three groups.
 
-- Group 1: Exercises 1 to 10 covering basic input/output and arithmetic.
+- Group 1: Exercises 1 to 10 covering basic input, output, and arithmetic.
 - Group 2: Exercises 11 to 33 covering geometric calculations and equations.
 - Group 3: Exercises 34 to 40 covering loops.
 
@@ -55,22 +55,19 @@ week5.pythonfundamental2/
 │   ├── bai38_giai_thua.py
 │   ├── bai39_luy_thua.py
 │   └── bai40_tong_chia_het_3_hoac_5.py
-├── test_all.py
 └── README.md
 ```
 
-## Running the Automated Test Suite
+## Running an Exercise
 
-Run the full test suite with Python unittest:
-
-```bash
-python -m unittest test_all.py
-```
-
-## Running an Individual Exercise
-
-Execute any exercise script directly:
+Execute any exercise script directly with Python:
 
 ```bash
 python group1/bai01_so_ban_trong_lop.py
+```
+
+Pass standard input directly or through redirection:
+
+```bash
+python group1/bai01_so_ban_trong_lop.py <<< "35"
 ```

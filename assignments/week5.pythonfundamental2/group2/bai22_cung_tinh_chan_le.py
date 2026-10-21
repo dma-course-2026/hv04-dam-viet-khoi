@@ -1,16 +1,11 @@
-import sys
+tokens = input().split()
+if len(tokens) >= 2:
+    m, n = int(tokens[0]), int(tokens[1])
+else:
+    m = int(tokens[0])
+    n = int(input().strip())
 
-
-def cung_tinh_chan_le(m: int, n: int) -> bool:
-    return m % 2 == n % 2
-
-
-if __name__ == "__main__":
-    tokens = sys.stdin.read().split()
-    if len(tokens) >= 2:
-        m = int(tokens[0])
-        n = int(tokens[1])
-        if cung_tinh_chan_le(m, n):
-            print("ĐÚNG")
-        else:
-            print("SAI")
+if m % 2 == n % 2:
+    print("ĐÚNG")
+else:
+    print("SAI")

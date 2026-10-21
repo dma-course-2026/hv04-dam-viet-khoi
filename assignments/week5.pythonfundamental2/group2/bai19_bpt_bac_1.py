@@ -1,25 +1,18 @@
-import sys
+tokens = input().split()
+if len(tokens) >= 2:
+    a, b = float(tokens[0]), float(tokens[1])
+else:
+    a = float(tokens[0])
+    b = float(input().strip())
 
-
-def giai_bpt_bac_1(a: float, b: float) -> tuple[str, str]:
-    if a > 0:
-        val = -b / a
-        return "NGHIEM", f"x >= {val}"
-    if a < 0:
-        val = -b / a
-        return "NGHIEM", f"x <= {val}"
+if a > 0:
+    x = -b / a
+    print(f"Bất phương trình có nghiệm: x >= {x}")
+elif a < 0:
+    x = -b / a
+    print(f"Bất phương trình có nghiệm: x <= {x}")
+else:
     if b >= 0:
-        return "VO_SO_NGHIEM", "Đúng với mọi x"
-    return "VO_NGHIEM", "Vô nghiệm"
-
-
-if __name__ == "__main__":
-    tokens = sys.stdin.read().split()
-    if len(tokens) >= 2:
-        a = float(tokens[0])
-        b = float(tokens[1])
-        trang_thai, ket_qua = giai_bpt_bac_1(a, b)
-        if trang_thai == "NGHIEM":
-            print(f"Bất phương trình có nghiệm: {ket_qua}")
-        else:
-            print(ket_qua)
+        print("Bất phương trình đúng với mọi x")
+    else:
+        print("Bất phương trình vô nghiệm")

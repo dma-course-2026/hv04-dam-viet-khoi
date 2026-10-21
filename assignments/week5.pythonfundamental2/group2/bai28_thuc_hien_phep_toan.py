@@ -1,28 +1,32 @@
-import sys
+tokens = input().split()
+if len(tokens) >= 3:
+    a = float(tokens[0])
+    b = float(tokens[1])
+    op = tokens[2]
+else:
+    a = float(tokens[0])
+    b = float(input().strip())
+    op = input().strip()
 
+a_display = int(a) if a.is_integer() else a
+b_display = int(b) if b.is_integer() else b
 
-def thuc_hien_phep_toan(a: float, b: float, op: str) -> float | str:
-    if op == "+":
-        return a + b
-    if op == "-":
-        return a - b
-    if op == "*":
-        return a * b
-    if op == "/":
-        if b == 0:
-            return "Không thể chia cho 0"
-        return a / b
-    return "Phép toán không hợp lệ"
-
-
-if __name__ == "__main__":
-    tokens = sys.stdin.read().split()
-    if len(tokens) >= 3:
-        a = float(tokens[0])
-        b = float(tokens[1])
-        op = tokens[2]
-        res = thuc_hien_phep_toan(a, b, op)
-        if isinstance(res, (int, float)):
-            print(f"{a:g} {op} {b:g} = {res:g}")
-        else:
-            print(res)
+if op == "+":
+    res = a + b
+    res_display = int(res) if isinstance(res, float) and res.is_integer() else res
+    print(f"{a_display} + {b_display} = {res_display}")
+elif op == "-":
+    res = a - b
+    res_display = int(res) if isinstance(res, float) and res.is_integer() else res
+    print(f"{a_display} - {b_display} = {res_display}")
+elif op == "*":
+    res = a * b
+    res_display = int(res) if isinstance(res, float) and res.is_integer() else res
+    print(f"{a_display} * {b_display} = {res_display}")
+elif op == "/":
+    if b == 0:
+        print("Lỗi: Phép chia cho 0")
+    else:
+        res = a / b
+        res_display = int(res) if res.is_integer() else res
+        print(f"{a_display} / {b_display} = {res_display}")
